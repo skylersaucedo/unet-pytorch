@@ -61,7 +61,7 @@ def check_accuracy(loader, model, device="cuda"):
     with torch.no_grad():
         for x, y in loader:
             x = x.to(device)
-            y = y.to(device).unsqueeze(1)
+            y = y.to(device).unsqueeze(1) #label doesnt have channel, so this is good.
             preds = torch.sigmoid(model(x)) # @TODO may need to change with multiclass
 
             # ALL OF THIS WILL NEED TO BE REWRITTEN, mIOU and DICE
