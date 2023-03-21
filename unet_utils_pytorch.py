@@ -64,8 +64,8 @@ def check_accuracy(loader, model, device="cuda"):
             y = y.to(device).unsqueeze(1)
             preds = torch.sigmoid(model(x)) # @TODO may need to change with multiclass
 
-            # ALL OF THIS WILL NEED TO BE REWRITTEN
-            
+            # ALL OF THIS WILL NEED TO BE REWRITTEN, mIOU and DICE
+
             preds = (preds > 0.5).float()
             num_correct += (preds == y).sum()
             num_pixels += torch.numel(preds)

@@ -5,7 +5,7 @@ from tqdm import tqdm
 import torch.nn as nn
 import torch.optim as optim
 from model import UNET
-from utils import (
+from unet_utils_pytorch import (
     load_checkpoint,
     save_checkpoint,
     get_loaders,

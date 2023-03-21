@@ -17,6 +17,8 @@ class DoubleConv(nn.Module):
     def forward(self, x):
         return self.conv(x)
 
+# @TODO - MAY NEED TO CHANGE OUTCHANNELS TO 7
+
 class UNET(nn.Module):
     def __init__(
             self, in_channels=3, out_channels=1, features=[64, 128, 256, 512],
